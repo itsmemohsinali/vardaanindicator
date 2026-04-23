@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" class="pricing-currency-inr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing — Vardaan</title>
+  <meta name="description" content="Vardaan pricing for TradingView — monthly, 3-month pack, or lifetime. Switch between INR and USD. 7-day refund." />
+  <meta name="theme-color" content="#060607" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================== PROMO BAR ============================== -->
+  <div class="promo-bar" id="promo-bar" role="region" aria-label="Promotional offer">
+    <div class="promo-bar__inner">
+      <span class="promo-bar__tag">
+        <svg class="promo-bar__tag-icon" width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+          <path d="M6.8 0.6 3 6.2h2.3l-1 5.2L8.9 5.6H6.5l1.2-5z"/>
+        </svg>
+        <span data-text="promo.offerName">Launch Sale</span>
+      </span>
+      <span class="promo-bar__text">
+        Save <em class="promo-bar__pct" data-text="promo.percent">20%</em> on your first year<span class="promo-bar__text-extra"> · ends in <strong data-text="promo.deadline">48h</strong></span>
+      </span>
+      <span class="promo-bar__divider" aria-hidden="true"></span>
+      <button class="promo-bar__code" type="button" data-promo-code data-code="VARDAAN20" aria-label="Copy code VARDAAN20">
+        <span class="promo-bar__code-value" data-text="promo.code">VARDAAN20</span>
+        <span class="promo-bar__copy-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="5" width="9" height="9" rx="1.6" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-7A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12H4" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </span>
+      </button>
+      <a href="pricing.html" class="promo-bar__cta">
+        Claim offer
+        <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="promo-bar__close" type="button" aria-label="Dismiss offer">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2.5 2.5l7 7m0-7l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        Vardaan
+      </a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link nav__link--active" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link" href="faqs.html">FAQs</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li class="nav__sep" aria-hidden="true"></li>
+        <li><a class="nav__link nav__link--social nav__link--discord" data-link="discord" href="#">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          Discord
+        </a></li>
+        <li><a class="nav__link nav__link--social nav__link--telegram" data-link="telegram" href="#">
+          <svg width="14" height="14" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+          Telegram
+        </a></li>
+      </ul>
+      <div class="nav__cta-group">
+        <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+      </div>
+      <button class="nav__burger" aria-label="Open menu" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a class="mobile-menu__link" href="index.html">Home</a>
+    <a class="mobile-menu__link" href="pricing.html">Pricing</a>
+    <a class="mobile-menu__link" href="faqs.html">FAQs</a>
+    <a class="mobile-menu__link" href="contact.html">Contact</a>
+    <div class="mobile-menu__sep" aria-hidden="true"></div>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--discord" data-link="discord" href="#">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+      Discord
+    </a>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--telegram" data-link="telegram" href="#">
+      <svg width="22" height="22" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+      Telegram
+    </a>
+    <div class="mobile-menu__actions">
+      <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================== HEADER ============================== -->
+    <section class="page-header page-header--pricing">
+      <div class="container">
+        <span class="badge reveal"><span class="badge__dot"></span>Pricing</span>
+        <h1 class="reveal" data-delay="80">Simple, honest <span class="gradient-text">pricing</span></h1>
+        <p class="reveal" data-delay="160">
+          <strong>Feature parity on every tier:</strong> the full Vardaan overlay on TradingView — no modes or signals held back for upsells. Below you’re only comparing <strong>billing</strong> and <strong>support</strong>; that’s the only difference.
+        </p>
+
+        <div class="pricing-trust reveal" data-delay="220">
+          <span class="pricing-trust__pill"><span class="pricing-trust__dot" aria-hidden="true"></span>7-day refund</span>
+          <span class="pricing-trust__pill"><span class="pricing-trust__dot" aria-hidden="true"></span>Non-repainting signals</span>
+          <span class="pricing-trust__pill"><span class="pricing-trust__dot" aria-hidden="true"></span>No Lag</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EVERY PLAN ============================== -->
+    <section class="section pricing-value-strip-section" aria-label="Included in every plan">
+      <div class="container">
+        <ul class="pricing-value-strip reveal">
+          <li>Full indicator — trend, patterns, entries &amp; exits</li>
+          <li>All markets &amp; timeframes on TradingView</li>
+          <li>Works on web &amp; mobile with your TV login</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== PRICING CARDS ============================== -->
+    <section class="section pricing-cards-section">
+      <div class="container">
+        <div class="currency-toggle-row reveal" data-delay="60">
+          <span class="currency-toggle__label" id="pricing-currency-label">Display prices in</span>
+          <div class="currency-toggle" data-state="inr" role="radiogroup" aria-labelledby="pricing-currency-label">
+            <span class="currency-toggle__thumb" aria-hidden="true"></span>
+            <button type="button" class="currency-toggle__btn is-active" data-currency="inr" role="radio" aria-checked="true" id="currency-inr">INR (₹)</button>
+            <button type="button" class="currency-toggle__btn" data-currency="usd" role="radio" aria-checked="false" id="currency-usd">USD ($)</button>
+          </div>
+        </div>
+
+        <div class="p-grid" data-stagger="80">
+
+          <article class="p-card p-card--monthly reveal">
+            <span class="p-card__badge p-card__badge--muted">Base · monthly</span>
+            <div class="p-card__name">Monthly</div>
+            <p class="p-card__lead">Start here — same full indicator, billed every month.</p>
+            <div class="p-card__price">
+              <span class="p-card__price-m">
+                <span class="p-currency p-currency--inr">₹999</span>
+                <span class="p-currency p-currency--usd">$12</span>
+              </span>
+              <span class="p-card__price-u">/ month</span>
+            </div>
+            <div class="p-card__sub">Billed monthly · cancel anytime</div>
+            <ul class="p-card__list">
+              <li>Clear docs to add Vardaan to your charts in minutes</li>
+              <li>Full Vardaan on your chart: trend read, patterns, clear signals after each candle closes</li>
+              <li>Any symbol or timeframe your TradingView plan allows</li>
+              <li>Entry &amp; exit markers; optional alerts via TradingView</li>
+              <li>Community Discord &amp; email help</li>
+              <li class="no">Written breakdowns, priority inbox &amp; onboarding call</li>
+            </ul>
+            <a data-link="pricing.monthly" href="#" class="btn btn-ghost btn-lg">Get Monthly</a>
+          </article>
+
+          <article class="p-card p-card--featured reveal">
+            <span class="p-card__badge">Most popular</span>
+            <div class="p-card__name">3 months</div>
+            <p class="p-card__lead p-card__lead--tight">One payment upfront — under 3× the monthly price.</p>
+            <div class="p-card__price-wrap">
+              <div class="p-card__price-reference">
+                <span class="p-currency p-currency--inr"><span class="p-card__strike">₹2,997</span> <span class="p-card__ref-label">total at 3× monthly</span></span>
+                <span class="p-currency p-currency--usd"><span class="p-card__strike">$36</span> <span class="p-card__ref-label">total at 3× monthly</span></span>
+              </div>
+              <div class="p-card__price">
+                <span class="p-card__price-m">
+                  <span class="p-currency p-currency--inr">₹1,599</span>
+                  <span class="p-currency p-currency--usd">$19</span>
+                </span>
+                <span class="p-card__price-u">/ 3 mo</span>
+              </div>
+              <p class="p-card__discount">
+                <span class="p-card__discount-badge">47% off</span>
+                <span class="p-card__discount-note">vs 3 months at monthly rate</span>
+              </p>
+            </div>
+            <ul class="p-card__list">
+              <li>Clear docs to add Vardaan to your charts in minutes</li>
+              <li>Full Vardaan on your chart: trend read, patterns, clear signals after each candle closes</li>
+              <li>Any symbol or timeframe your TradingView plan allows</li>
+              <li>Entry &amp; exit markers; optional alerts via TradingView</li>
+              <li>Written breakdowns, exclusive Discord &amp; priority support</li>
+              <li class="no">1-on-1 onboarding call</li>
+            </ul>
+            <a data-link="pricing.threeMonths" href="#" class="btn btn-primary btn-lg">Get 3 months</a>
+          </article>
+
+          <article class="p-card p-card--lifetime reveal">
+            <span class="p-card__badge p-card__badge--muted">Pay once</span>
+            <div class="p-card__name">Lifetime</div>
+            <p class="p-card__lead">No renewals — all major updates included for good.</p>
+            <div class="p-card__price-wrap">
+              <div class="p-card__price-reference">
+                <span class="p-currency p-currency--inr"><span class="p-card__strike">₹11,988</span> <span class="p-card__ref-label">total at 12× monthly</span></span>
+                <span class="p-currency p-currency--usd"><span class="p-card__strike">$144</span> <span class="p-card__ref-label">total at 12× monthly</span></span>
+              </div>
+              <div class="p-card__price">
+                <span class="p-card__price-m">
+                  <span class="p-currency p-currency--inr">₹4,999</span>
+                  <span class="p-currency p-currency--usd">$60</span>
+                </span>
+                <span class="p-card__price-u">one-time</span>
+              </div>
+              <p class="p-card__discount">
+                <span class="p-card__discount-badge">58% off</span>
+                <span class="p-card__discount-note">vs a full year at monthly rate</span>
+              </p>
+            </div>
+            <ul class="p-card__list">
+              <li>Clear docs to add Vardaan to your charts in minutes</li>
+              <li>Full Vardaan on your chart: trend read, patterns, clear signals after each candle closes</li>
+              <li>Any symbol or timeframe your TradingView plan allows</li>
+              <li>Entry &amp; exit markers; optional alerts via TradingView</li>
+              <li>Written breakdowns, lifetime Discord &amp; priority support</li>
+              <li>Onboarding call &amp; major updates — pay once, no renewals</li>
+            </ul>
+            <a data-link="pricing.lifetime" href="#" class="btn btn-ghost btn-lg btn-ghost--bright">Get Lifetime</a>
+          </article>
+
+        </div>
+
+        <div class="payment-strip reveal" data-delay="120" aria-label="Payment methods accepted at checkout">
+          <p class="payment-strip__cap">Secure checkout · Paytm Payment Gateway</p>
+          <ul class="payment-strip__methods">
+            <li class="payment-chip" title="UPI — PhonePe, Google Pay, Paytm, BHIM &amp; more">
+              <svg class="payment-chip__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+                <path d="m8.5 12 2.5 2.5L15.5 9" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>UPI</span>
+            </li>
+            <li class="payment-chip payment-chip--visa" title="Visa">
+              <span class="payment-chip__wordmark" aria-hidden="true">VISA</span>
+            </li>
+            <li class="payment-chip payment-chip--mc" title="Mastercard">
+              <span class="payment-chip__mc" aria-hidden="true">
+                <span class="payment-chip__mc-c payment-chip__mc-c--l"></span>
+                <span class="payment-chip__mc-c payment-chip__mc-c--r"></span>
+              </span>
+              <span class="sr-only">Mastercard</span>
+            </li>
+            <li class="payment-chip payment-chip--rupay" title="RuPay">
+              <span class="payment-chip__wordmark payment-chip__wordmark--rupay" aria-hidden="true">RuPay</span>
+            </li>
+            <li class="payment-chip payment-chip--amex" title="American Express">
+              <span class="payment-chip__wordmark payment-chip__wordmark--amex" aria-hidden="true">AMEX</span>
+            </li>
+            <li class="payment-chip payment-chip--diners" title="Diners Club">
+              <span class="payment-chip__wordmark payment-chip__wordmark--diners" aria-hidden="true">Diners</span>
+            </li>
+            <li class="payment-chip" title="Net banking — 100+ banks">
+              <svg class="payment-chip__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 10h18v10H3V10Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+                <path d="M6 10V7a6 6 0 0 1 12 0v3" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+                <path d="M10 14h4" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+              </svg>
+              <span>Net banking</span>
+            </li>
+            <li class="payment-chip payment-chip--paytm" title="Paytm Wallet &amp; Paytm instruments">
+              <span class="payment-chip__wordmark payment-chip__wordmark--paytm" aria-hidden="true">Paytm</span>
+            </li>
+            <li class="payment-chip" title="Card EMI">
+              <svg class="payment-chip__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.35"/>
+                <path d="M3 10h18" stroke="currentColor" stroke-width="1.35"/>
+                <path d="M7 14h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span>Card EMI</span>
+            </li>
+          </ul>
+          <p class="payment-strip__note">UPI works with PhonePe, Google Pay, Paytm, BHIM &amp; more. Maestro &amp; other networks may appear at checkout depending on your bank.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ TEASER ============================== -->
+    <section class="section section-cta">
+      <div class="container">
+        <div class="reveal">
+          <h2>Still deciding?</h2>
+          <p>Read the FAQ for billing and access, book a quick demo, or ask us anything on Discord.</p>
+          <div class="section-cta__ctas">
+            <a href="faqs.html" class="btn btn-primary btn-lg">
+              Read FAQs
+              <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="contact.html" class="btn btn-ghost btn-lg">Book a demo</a>
+            <a data-link="discord" href="#" class="btn btn-ghost btn-lg">Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col-brand">
+          <a href="index.html" class="footer__brand">
+            <span class="nav__brand-mark" aria-hidden="true"></span>
+            Vardaan
+          </a>
+          <p class="footer__tagline">
+            A smart trend indicator for TradingView. Built for traders who want clarity,
+            not clutter.
+          </p>
+        </div>
+        <div>
+          <div class="footer__col-title">Product</div>
+          <div class="footer__col-list">
+            <a href="index.html#features">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="index.html#features">Changelog</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Community</div>
+          <div class="footer__col-list">
+            <a data-link="discord" href="#">Discord</a>
+            <a data-link="discord" href="#">Setups channel</a>
+            <a data-link="discord" href="#">Results</a>
+            <a data-link="discord" href="#">Announcements</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Support</div>
+          <div class="footer__col-list">
+            <a data-mail href="#">Contact</a>
+            <a href="faqs.html">Help center</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© <span data-text="year">2025</span> Vardaan. Built for traders, by traders.</div>
+        <div class="footer__bottom-social">
+          <a data-link="discord" href="#" class="footer__icon" aria-label="Discord">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          </a>
+          <a data-mail href="#" class="footer__icon" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a data-link="twitter" href="#" class="footer__icon" aria-label="Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H.8l8-9.2L0 2h7l4.8 6.3L18 2zM16.8 20h1.7L7.3 3.9H5.5L16.8 20z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

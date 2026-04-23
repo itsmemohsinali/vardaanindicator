@@ -1,0 +1,1071 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vardaan — Trade with Clarity. Not Noise.</title>
+  <meta name="description" content="Vardaan is a smart trend indicator for TradingView that color-codes every candle, detects candlestick patterns, and signals entries and exits." />
+  <meta name="theme-color" content="#060607" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================== PROMO BAR ============================== -->
+  <div class="promo-bar" id="promo-bar" role="region" aria-label="Promotional offer">
+    <div class="promo-bar__inner">
+      <span class="promo-bar__tag">
+        <svg class="promo-bar__tag-icon" width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+          <path d="M6.8 0.6 3 6.2h2.3l-1 5.2L8.9 5.6H6.5l1.2-5z"/>
+        </svg>
+        <span data-text="promo.offerName">Launch Sale</span>
+      </span>
+      <span class="promo-bar__text">
+        Save <em class="promo-bar__pct" data-text="promo.percent">20%</em> on your first year<span class="promo-bar__text-extra"> · ends in <strong data-text="promo.deadline">48h</strong></span>
+      </span>
+      <span class="promo-bar__divider" aria-hidden="true"></span>
+      <button class="promo-bar__code" type="button" data-promo-code data-code="VARDAAN20" aria-label="Copy code VARDAAN20">
+        <span class="promo-bar__code-value" data-text="promo.code">VARDAAN20</span>
+        <span class="promo-bar__copy-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="5" width="9" height="9" rx="1.6" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-7A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12H4" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </span>
+      </button>
+      <a href="pricing.html" class="promo-bar__cta">
+        Claim offer
+        <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="promo-bar__close" type="button" aria-label="Dismiss offer">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2.5 2.5l7 7m0-7l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================== NAV ============================== -->
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        Vardaan
+      </a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link" href="faqs.html">FAQs</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li class="nav__sep" aria-hidden="true"></li>
+        <li><a class="nav__link nav__link--social nav__link--discord" data-link="discord" href="#">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          Discord
+        </a></li>
+        <li><a class="nav__link nav__link--social nav__link--telegram" data-link="telegram" href="#">
+          <svg width="14" height="14" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+          Telegram
+        </a></li>
+      </ul>
+      <div class="nav__cta-group">
+        <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+      </div>
+      <button class="nav__burger" aria-label="Open menu" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a class="mobile-menu__link" href="index.html">Home</a>
+    <a class="mobile-menu__link" href="pricing.html">Pricing</a>
+    <a class="mobile-menu__link" href="faqs.html">FAQs</a>
+    <a class="mobile-menu__link" href="contact.html">Contact</a>
+    <div class="mobile-menu__sep" aria-hidden="true"></div>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--discord" data-link="discord" href="#">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+      Discord
+    </a>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--telegram" data-link="telegram" href="#">
+      <svg width="22" height="22" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+      Telegram
+    </a>
+    <div class="mobile-menu__actions">
+      <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================== HERO ============================== -->
+    <section class="section-hero">
+      <div class="container">
+
+        <span class="badge hero__badge hero-anim" style="--d:0ms">
+          <span class="badge__dot"></span>
+          TradingView Indicator · v6.0 released
+        </span>
+
+        <h1 class="hero__headline hero-anim" style="--d:80ms">
+          Trade with <span class="gradient-text">Clarity.</span><br/>
+          Not Noise.
+        </h1>
+
+        <p class="hero__sub hero-anim" style="--d:160ms">
+          Vardaan is a smart trend indicator for TradingView that color-codes every
+          candle, detects candlestick patterns, and signals entries and exits — so
+          you spend less time guessing and more time executing.
+        </p>
+
+        <div class="hero__ctas hero-anim" style="--d:240ms">
+          <a href="pricing.html" class="btn btn-primary btn-lg">
+            Get access
+            <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="contact.html" class="btn btn-ghost btn-ghost--bright btn-lg">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="3.5" width="12" height="11" rx="1.6" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M2 6.6h12" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M5.2 2v3M10.8 2v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            Book a free demo
+          </a>
+        </div>
+
+        <div class="hero__trust hero-anim" style="--d:320ms">
+          <span class="hero__trust-avatars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="hero__trust-stars" aria-hidden="true">★★★★★</span>
+          Trusted by 1,200+ traders
+        </div>
+
+        <!-- hero chart — crisp SVG, built in main.js -->
+        <div class="hero__visual hero-anim" style="--d:400ms" aria-hidden="true">
+          <div class="hero__visual__inner">
+            <svg class="vd-chart" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Vardaan indicator on Gold/USD 5m chart"></svg>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================== LOGO STRIP ============================== -->
+    <section class="logo-strip">
+      <div class="container">
+        <div class="logo-strip__label">Works on every market you trade</div>
+        <div class="logo-strip__row">
+          <!-- TradingView -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 6h10v4H15v8h-4v-8H3V6h5a5 5 0 0 1 3 0z"/></svg>
+            TradingView
+          </span>
+
+          <!-- BTC / USD -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 4v2M11 4v2M8 18v2M11 18v2"/>
+              <path d="M7 6h7a3 3 0 0 1 0 6H7zM7 12h8a3 3 0 0 1 0 6H7zM7 6v12"/>
+            </svg>
+            BTC/USD
+          </span>
+
+          <!-- NIFTY 50 (India) -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 19V5l10 12V5"/>
+              <path d="M17 8l2.5-2.5M19.5 5.5V9M19.5 5.5H16"/>
+            </svg>
+            NIFTY 50
+          </span>
+
+          <!-- XAU / USD (Gold) -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 10l3-3h10l3 3v8H4z"/>
+              <path d="M4 10h16"/>
+              <path d="M9 13.5h6M9 16h6" stroke-opacity="0.55"/>
+            </svg>
+            XAU/USD
+          </span>
+
+          <!-- EUR / USD -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 6a6 6 0 1 0 0 12"/>
+              <path d="M5 10h9M5 14h9"/>
+            </svg>
+            EUR/USD
+          </span>
+
+          <!-- NAS100 -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="3"  y="14" width="3" height="6"  rx="0.5"/>
+              <rect x="8.5" y="10" width="3" height="10" rx="0.5"/>
+              <rect x="14" y="7"  width="3" height="13" rx="0.5"/>
+              <path d="M20 4l.9 2.1L23 7l-2.1.9L20 10l-.9-2.1L17 7l2.1-.9L20 4z" opacity="0.85"/>
+            </svg>
+            NAS100
+          </span>
+
+          <!-- SPX500 -->
+          <span class="logo-strip__item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v18"/>
+              <path d="M17 8a4 4 0 0 0-4-3h-2a3 3 0 0 0 0 6h2a3 3 0 0 1 0 6h-2a4 4 0 0 1-4-3"/>
+            </svg>
+            SPX500
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STATS BAR ============================== -->
+    <section class="stats-bar">
+      <div class="container">
+        <div class="stats-bar__grid reveal" data-stagger="80">
+          <div class="stats-bar__stat reveal" style="--accent: #4ADE80">
+            <span class="stats-bar__cap">Community</span>
+            <div class="stats-bar__num">1,200<span class="stats-bar__plus">+</span></div>
+            <span class="stats-bar__label">Active traders worldwide</span>
+          </div>
+          <div class="stats-bar__stat reveal" style="--accent: #FCD34D">
+            <span class="stats-bar__cap">Rating</span>
+            <div class="stats-bar__num">4.9<span class="stats-bar__star">★</span></div>
+            <span class="stats-bar__label">Across 300+ reviews</span>
+          </div>
+          <div class="stats-bar__stat reveal" style="--accent: #4A90FF">
+            <span class="stats-bar__cap">Coverage</span>
+            <div class="stats-bar__num">All TFs</div>
+            <span class="stats-bar__label">1m → Daily charts</span>
+          </div>
+          <div class="stats-bar__stat reveal" style="--accent: #FF4D8D">
+            <span class="stats-bar__cap">Reliability</span>
+            <div class="stats-bar__num">Zero</div>
+            <span class="stats-bar__label">Repainting signals</span>
+          </div>
+        </div>
+
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee__track">
+            <span class="marquee__item">@aarav.singh</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@mikaela_r</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@rohan.m</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@tom.hollis</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@fx_sneha</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@priya_kapoor</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@thierry.m</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@ishaan_p</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@hannah.w</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@dev.mehta</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@crypto_mihir</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@lian_zhao</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@noah.wright</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@kavya.k</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@anushka_n</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@nifty_raj</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@m_desai</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@tarun.rk</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@sofia.tlv</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@arvind.k</span>
+            <span class="marquee__item">·</span>
+            <span class="marquee__item">@btc_kiran</span>
+            <span class="marquee__item">·</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BENTO FEATURES ============================== -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge"><span class="badge__dot"></span>What You Get</span>
+          <h2>Everything in one indicator.</h2>
+          <p>Stop juggling four tools with conflicting signals. Vardaan gives you structure, patterns, strength, and entries in a single overlay — so you can act with clarity instead of overthinking the chart.</p>
+        </div>
+
+        <div class="bento" data-stagger="80">
+
+          <!-- 1 · WIDE · Smart Candle Coloring -->
+          <article class="bento-tile bento-tile--wide reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M4 19V9m5 10V4m5 15v-7m5 7V10"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">01</span>
+            </div>
+            <h3 class="bento-tile__title">Smart candle coloring</h3>
+            <p class="bento-tile__body">Each candle is tinted by trend context — red for bearish structure, amber for consolidation, green for bullish momentum. One glance tells you where price actually stands.</p>
+            <div class="bento-tile__visual">
+              <div class="trend-viz">
+                <div class="trend-viz__labels">
+                  <span class="trend-viz__label trend-viz__label--down">Bearish</span>
+                  <span class="trend-viz__label trend-viz__label--flat">Consolidation</span>
+                  <span class="trend-viz__label trend-viz__label--up">Bullish</span>
+                </div>
+                <svg class="trend-viz__svg" viewBox="0 0 480 140" preserveAspectRatio="none" aria-hidden="true">
+                  <line x1="0" y1="35"  x2="480" y2="35"  stroke="rgba(255,255,255,0.03)" stroke-dasharray="2 5"/>
+                  <line x1="0" y1="70"  x2="480" y2="70"  stroke="rgba(255,255,255,0.04)" stroke-dasharray="2 5"/>
+                  <line x1="0" y1="105" x2="480" y2="105" stroke="rgba(255,255,255,0.03)" stroke-dasharray="2 5"/>
+                  <g class="trend-viz__candles"></g>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 · Works Everywhere -->
+          <article class="bento-tile reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">02</span>
+            </div>
+            <h3 class="bento-tile__title">Works everywhere</h3>
+            <p class="bento-tile__body">Stocks, crypto, forex, indices, commodities. Any timeframe from 1m to 1W — adapts automatically.</p>
+            <div class="asset-grid" aria-hidden="true">
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#F7931A"></span><span class="asset-chip__sym">BTC/USD</span><span class="asset-chip__cls">Crypto</span></span>
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#B366FF"></span><span class="asset-chip__sym">NIFTY&nbsp;50</span><span class="asset-chip__cls">Index</span></span>
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#4A90FF"></span><span class="asset-chip__sym">EUR/USD</span><span class="asset-chip__cls">Forex</span></span>
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#FCD34D"></span><span class="asset-chip__sym">XAU/USD</span><span class="asset-chip__cls">Metal</span></span>
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#B366FF"></span><span class="asset-chip__sym">SPX500</span><span class="asset-chip__cls">Index</span></span>
+              <span class="asset-chip"><span class="asset-chip__dot" style="color:#4ADE80"></span><span class="asset-chip__sym">RELIANCE</span><span class="asset-chip__cls">Equity</span></span>
+            </div>
+          </article>
+
+          <!-- 3 · Battle-tested performance -->
+          <article class="bento-tile reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M4 18l5-5 3 3 7-10"/>
+                  <path d="M15 6h4v4"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">03</span>
+            </div>
+            <h3 class="bento-tile__title">Battle-tested results</h3>
+            <p class="bento-tile__body">Three years forward-tested on live markets. Public trade log. No cherry-picking, no black boxes.</p>
+            <div class="perf-card" aria-hidden="true">
+              <div class="perf-card__hero">
+                <div class="perf-card__big">+184.6<span class="perf-card__pct">%</span></div>
+                <div class="perf-card__sub">
+                  <span class="perf-card__badge">3Y</span>
+                  <span>Backtested return</span>
+                </div>
+              </div>
+              <svg class="perf-card__chart" viewBox="0 0 260 54" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="perf-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.28"/>
+                    <stop offset="100%" stop-color="#4ADE80" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,48 C 20,46 38,44 60,42 C 78,40 92,44 108,40 C 126,36 142,34 160,26 C 178,18 196,16 214,12 C 230,8 246,6 260,4 L 260,54 L 0,54 Z" fill="url(#perf-grad)"/>
+                <path d="M0,48 C 20,46 38,44 60,42 C 78,40 92,44 108,40 C 126,36 142,34 160,26 C 178,18 196,16 214,12 C 230,8 246,6 260,4" fill="none" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round"/>
+                <circle cx="260" cy="4" r="2.5" fill="#4ADE80"/>
+                <circle cx="260" cy="4" r="5" fill="#4ADE80" opacity="0.35">
+                  <animate attributeName="r" values="4;9;4" dur="1.8s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.5;0;0.5" dur="1.8s" repeatCount="indefinite"/>
+                </circle>
+              </svg>
+              <div class="perf-card__stats">
+                <div class="perf-card__stat"><span class="perf-card__val">68%</span><span class="perf-card__lbl">Win rate</span></div>
+                <div class="perf-card__stat"><span class="perf-card__val">1.8R</span><span class="perf-card__lbl">Avg win</span></div>
+                <div class="perf-card__stat"><span class="perf-card__val">1,247</span><span class="perf-card__lbl">Trades</span></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4 · WIDE · Patterns & confirmed bars -->
+          <article class="bento-tile bento-tile--wide reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l7 4v6c0 5-3.5 8.5-7 9.5-3.5-1-7-4.5-7-9.5V7l7-4z"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">04</span>
+            </div>
+            <h3 class="bento-tile__title">Patterns &amp; confirmed timing</h3>
+            <p class="bento-tile__body">Classic candlestick patterns are called out on the chart, in the same view as trend coloring. Signals and labels update only after a candle closes — so replay, backtests, and live sessions stay aligned.</p>
+            <div class="pattern-card" aria-hidden="true">
+              <div class="pattern-card__chart">
+                <svg class="pattern-card__svg" viewBox="0 0 320 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <line x1="0" y1="28" x2="320" y2="28" stroke="rgba(255,255,255,0.06)" stroke-dasharray="3 6"/>
+                  <!-- simple candles -->
+                  <g stroke-linecap="round">
+                    <line x1="32" y1="22" x2="32" y2="36" stroke="rgba(248,113,113,0.85)" stroke-width="1.5"/>
+                    <rect x="26" y="26" width="12" height="10" rx="1" fill="rgba(248,113,113,0.35)" stroke="rgba(248,113,113,0.7)" stroke-width="1"/>
+                    <line x1="72" y1="18" x2="72" y2="38" stroke="rgba(248,113,113,0.75)" stroke-width="1.5"/>
+                    <rect x="66" y="28" width="12" height="8" rx="1" fill="rgba(248,113,113,0.3)" stroke="rgba(248,113,113,0.65)" stroke-width="1"/>
+                    <line x1="112" y1="20" x2="112" y2="34" stroke="rgba(252,211,77,0.85)" stroke-width="1.5"/>
+                    <rect x="106" y="24" width="12" height="8" rx="1" fill="rgba(252,211,77,0.22)" stroke="rgba(252,211,77,0.65)" stroke-width="1"/>
+                    <line x1="152" y1="16" x2="152" y2="40" stroke="rgba(74,222,128,0.85)" stroke-width="1.5"/>
+                    <rect x="146" y="22" width="12" height="12" rx="1" fill="rgba(74,222,128,0.28)" stroke="rgba(74,222,128,0.7)" stroke-width="1"/>
+                    <line x1="192" y1="14" x2="192" y2="42" stroke="rgba(74,222,128,0.9)" stroke-width="1.5"/>
+                    <rect x="186" y="18" width="12" height="16" rx="1" fill="rgba(74,222,128,0.35)" stroke="var(--up)" stroke-width="1.2"/>
+                  </g>
+                  <g transform="translate(232 8)">
+                    <rect width="76" height="40" rx="8" fill="rgba(74,222,128,0.1)" stroke="rgba(74,222,128,0.35)" stroke-width="1"/>
+                    <path d="M24 20l4 4 8-10" stroke="var(--up)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <text x="38" y="30" fill="#A1A1A6" font-family="ui-monospace, monospace" font-size="9" letter-spacing="0.06em">CLOSED</text>
+                  </g>
+                </svg>
+              </div>
+              <div class="pattern-card__chips">
+                <span class="pattern-chip">Engulfing</span>
+                <span class="pattern-chip">Morning star</span>
+                <span class="pattern-chip">Evening star</span>
+                <span class="pattern-chip">Hammer</span>
+                <span class="pattern-chip">Shooting star</span>
+              </div>
+              <p class="pattern-card__foot">Shown in-chart when the pattern validates — not a separate scanner tab.</p>
+            </div>
+          </article>
+
+          <!-- 5 · Instant alerts everywhere -->
+          <article class="bento-tile reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">05</span>
+            </div>
+            <h3 class="bento-tile__title">Never miss a setup</h3>
+            <p class="bento-tile__body">Instant push alerts to phone, Telegram, Discord or email — the moment a valid signal fires.</p>
+            <div class="alerts-card" aria-hidden="true">
+              <div class="alerts-card__row">
+                <span class="alerts-card__ico alerts-card__ico--tg">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                </span>
+                <div class="alerts-card__body">
+                  <div class="alerts-card__title">Vardaan · Telegram</div>
+                  <div class="alerts-card__msg"><span class="alerts-card__tag alerts-card__tag--up">LONG</span> NIFTY 50 @ 24,185.20</div>
+                </div>
+                <span class="alerts-card__time">now</span>
+              </div>
+              <div class="alerts-card__row">
+                <span class="alerts-card__ico alerts-card__ico--tv">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 4h8v3H8v13H6V7H3V4zm10 0h8v3h-2.5L15 20h-2l3.5-13H13V4z"/></svg>
+                </span>
+                <div class="alerts-card__body">
+                  <div class="alerts-card__title">TradingView alert</div>
+                  <div class="alerts-card__msg"><span class="alerts-card__tag alerts-card__tag--down">EXIT</span> BTC/USD @ 67,240</div>
+                </div>
+                <span class="alerts-card__time">2m</span>
+              </div>
+              <div class="alerts-card__row">
+                <span class="alerts-card__ico alerts-card__ico--dc">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 5.3A17.3 17.3 0 0 0 15 4l-.2.4a15.3 15.3 0 0 1 4 1.3 14 14 0 0 0-13.6 0 15.3 15.3 0 0 1 4-1.3L9 4a17.3 17.3 0 0 0-4.5 1.3A17.6 17.6 0 0 0 1.5 17a17.9 17.9 0 0 0 5.4 2.7l.4-.6a12 12 0 0 1-1.9-.9c.1-.1.3-.2.4-.3a12.5 12.5 0 0 0 10.7 0l.4.3c-.6.4-1.2.7-1.9.9l.4.6a17.9 17.9 0 0 0 5.4-2.7 17.6 17.6 0 0 0-3-11.7zM8.5 14.8a2 2 0 0 1 0-4 2 2 0 0 1 0 4zm7 0a2 2 0 0 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                </span>
+                <div class="alerts-card__body">
+                  <div class="alerts-card__title">Discord · #signals</div>
+                  <div class="alerts-card__msg"><span class="alerts-card__tag alerts-card__tag--up">LONG</span> EUR/USD @ 1.0845</div>
+                </div>
+                <span class="alerts-card__time">5m</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6 · Active community -->
+          <article class="bento-tile reveal">
+            <div class="bento-tile__head">
+              <div class="bento-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <circle cx="9" cy="8" r="3"/>
+                  <circle cx="17" cy="9" r="2.5"/>
+                  <path d="M3 20c1-3 3.5-5 6-5s5 2 6 5"/>
+                  <path d="M15 20c.6-2 2-3 4-3s2.5 1 3 3"/>
+                </svg>
+              </div>
+              <span class="bento-tile__num">06</span>
+            </div>
+            <h3 class="bento-tile__title">12,000+ traders inside</h3>
+            <p class="bento-tile__body">Active Discord, weekly Q&amp;As, monthly trade breakdowns. Trade with a community, not alone.</p>
+            <div class="community-card" aria-hidden="true">
+              <div class="community-card__avatars">
+                <span class="community-card__av" style="background:linear-gradient(135deg,#FF8B5A,#B366FF)">A</span>
+                <span class="community-card__av" style="background:linear-gradient(135deg,#FF4D8D,#B366FF)">S</span>
+                <span class="community-card__av" style="background:linear-gradient(135deg,#4ADE80,#4A90FF)">R</span>
+                <span class="community-card__av" style="background:linear-gradient(135deg,#B366FF,#FCD34D)">K</span>
+                <span class="community-card__av" style="background:linear-gradient(135deg,#4A90FF,#4ADE80)">T</span>
+                <span class="community-card__av community-card__av--plus">+12K</span>
+              </div>
+              <div class="community-card__live">
+                <span class="community-card__pulse"></span>
+                <span class="community-card__count">2,341</span>
+                <span class="community-card__label">online now</span>
+              </div>
+              <div class="community-card__channels">
+                <span class="community-card__ch"><span class="community-card__ch-dot" style="background:#5865F2"></span>Discord</span>
+                <span class="community-card__ch"><span class="community-card__ch-dot" style="background:#26A5E4"></span>Telegram</span>
+                <span class="community-card__ch"><span class="community-card__ch-dot" style="background:#E5E7EB"></span>X</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BEFORE / AFTER ============================== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge"><span class="badge__dot"></span>Before / After</span>
+          <h2>Same chart. Clearer decisions.</h2>
+          <p>Stop squinting at a wall of neutral candles hoping for a signal. Vardaan surfaces structure — so you can act.</p>
+        </div>
+
+        <div class="compare-ba" data-stagger="120">
+
+          <article class="ba-card reveal">
+            <span class="ba-card__label">Without Vardaan</span>
+            <h3 class="ba-card__title">Naked candles, no context</h3>
+            <div class="ba-chart ba-chart--svg" aria-hidden="true">
+              <svg class="ba-svg" viewBox="0 0 320 96" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+                <rect class="ba-svg__pane" width="320" height="96" rx="6"/>
+                <g class="ba-svg__grid" stroke="rgba(255,255,255,0.07)" stroke-width="0.45">
+                  <line x1="8" y1="22" x2="312" y2="22"/><line x1="8" y1="44" x2="312" y2="44"/><line x1="8" y1="66" x2="312" y2="66"/>
+                </g>
+                <g class="ba-svg__vgrid" stroke="rgba(255,255,255,0.05)" stroke-width="0.45">
+                  <line x1="77" y1="10" x2="77" y2="86"/><line x1="140" y1="10" x2="140" y2="86"/><line x1="203" y1="10" x2="203" y2="86"/><line x1="266" y1="10" x2="266" y2="86"/>
+                </g>
+                <g fill="#5c5c64" stroke="#4a4a52" stroke-width="1.15" stroke-linecap="round">
+                  <g transform="translate(14,0)"><line x1="6" y1="72" x2="6" y2="82"/><rect x="3.5" y="74" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(35,0)"><line x1="6" y1="71" x2="6" y2="80"/><rect x="3.5" y="73" width="5" height="3" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(56,0)"><line x1="6" y1="69" x2="6" y2="78"/><rect x="3.5" y="70" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(77,0)"><line x1="6" y1="67" x2="6" y2="76"/><rect x="3.5" y="68" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(98,0)"><line x1="6" y1="64" x2="6" y2="74"/><rect x="3.5" y="65" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(119,0)"><line x1="6" y1="62" x2="6" y2="71"/><rect x="3.5" y="63" width="5" height="3" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(140,0)"><line x1="6" y1="59" x2="6" y2="68"/><rect x="3.5" y="60" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(161,0)"><line x1="6" y1="56" x2="6" y2="65"/><rect x="3.5" y="57" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(182,0)"><line x1="6" y1="53" x2="6" y2="62"/><rect x="3.5" y="54" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(203,0)"><line x1="6" y1="50" x2="6" y2="59"/><rect x="3.5" y="51" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(224,0)"><line x1="6" y1="47" x2="6" y2="55"/><rect x="3.5" y="48" width="5" height="4" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(245,0)"><line x1="6" y1="45" x2="6" y2="58"/><rect x="3.5" y="50" width="5" height="3" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(266,0)"><line x1="6" y1="44" x2="6" y2="54"/><rect x="3.5" y="46" width="5" height="6" rx="0.6" stroke="none"/></g>
+                  <g transform="translate(287,0)"><line x1="6" y1="38" x2="6" y2="50"/><rect x="3.5" y="40" width="5" height="7" rx="0.6" stroke="none"/></g>
+                </g>
+              </svg>
+            </div>
+            <ul class="ba-card__points">
+              <li>No way to tell if momentum is real or noise</li>
+              <li>Miss the pattern setup, guess the exit</li>
+              <li>Stack 3 indicators, still disagree with yourself</li>
+            </ul>
+          </article>
+
+          <article class="ba-card ba-card--after reveal">
+            <span class="ba-card__label">With Vardaan</span>
+            <h3 class="ba-card__title">Structure, patterns, signals</h3>
+            <div class="ba-chart ba-chart--svg" aria-hidden="true">
+              <svg class="ba-svg" viewBox="0 0 320 96" preserveAspectRatio="xMidYMid meet" role="img" aria-hidden="true">
+                <rect class="ba-svg__pane" width="320" height="96" rx="6"/>
+                <g class="ba-svg__grid" stroke="rgba(255,255,255,0.07)" stroke-width="0.45">
+                  <line x1="8" y1="22" x2="312" y2="22"/><line x1="8" y1="44" x2="312" y2="44"/><line x1="8" y1="66" x2="312" y2="66"/>
+                </g>
+                <g class="ba-svg__vgrid" stroke="rgba(255,255,255,0.05)" stroke-width="0.45">
+                  <line x1="77" y1="10" x2="77" y2="86"/><line x1="140" y1="10" x2="140" y2="86"/><line x1="203" y1="10" x2="203" y2="86"/><line x1="266" y1="10" x2="266" y2="86"/>
+                </g>
+                <!-- Same OHLC geometry as “before”; gold bull / red bear (XAU-style) -->
+                <g stroke-linecap="round" stroke-width="1.15">
+                  <g transform="translate(14,0)"><line x1="6" y1="72" x2="6" y2="82" stroke="#ef5350"/><rect x="3.5" y="74" width="5" height="4" rx="0.6" fill="#e53935" stroke="none"/></g>
+                  <g transform="translate(35,0)"><line x1="6" y1="71" x2="6" y2="80" stroke="#ef5350"/><rect x="3.5" y="73" width="5" height="3" rx="0.6" fill="#e53935" stroke="none"/></g>
+                  <g transform="translate(56,0)"><line x1="6" y1="69" x2="6" y2="78" stroke="#c9a227"/><rect x="3.5" y="70" width="5" height="4" rx="0.6" fill="#a67c00" stroke="none"/></g>
+                  <g transform="translate(77,0)"><line x1="6" y1="67" x2="6" y2="76" stroke="#c9a227"/><rect x="3.5" y="68" width="5" height="4" rx="0.6" fill="#a67c00" stroke="none"/></g>
+                  <g transform="translate(98,0)"><line x1="6" y1="64" x2="6" y2="74" stroke="#f0c85c"/><rect x="3.5" y="65" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(119,0)"><line x1="6" y1="62" x2="6" y2="71" stroke="#f0c85c"/><rect x="3.5" y="63" width="5" height="3" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(140,0)"><line x1="6" y1="59" x2="6" y2="68" stroke="#f0c85c"/><rect x="3.5" y="60" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(161,0)"><line x1="6" y1="56" x2="6" y2="65" stroke="#f0c85c"/><rect x="3.5" y="57" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(182,0)"><line x1="6" y1="53" x2="6" y2="62" stroke="#f0c85c"/><rect x="3.5" y="54" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(203,0)"><line x1="6" y1="50" x2="6" y2="59" stroke="#f0c85c"/><rect x="3.5" y="51" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(224,0)"><line x1="6" y1="47" x2="6" y2="55" stroke="#f0c85c"/><rect x="3.5" y="48" width="5" height="4" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(245,0)"><line x1="6" y1="45" x2="6" y2="58" stroke="#ef5350"/><rect x="3.5" y="50" width="5" height="3" rx="0.6" fill="#e53935" stroke="none"/></g>
+                  <g transform="translate(266,0)"><line x1="6" y1="44" x2="6" y2="54" stroke="#f0c85c"/><rect x="3.5" y="46" width="5" height="6" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                  <g transform="translate(287,0)"><line x1="6" y1="38" x2="6" y2="50" stroke="#f0c85c"/><rect x="3.5" y="40" width="5" height="7" rx="0.6" fill="#e4b82a" stroke="none"/></g>
+                </g>
+              </svg>
+            </div>
+            <ul class="ba-card__points">
+              <li>Color-coded trend, at a glance</li>
+              <li>Chop vs impulse visible on the same candle strip</li>
+              <li>One overlay instead of stacking conflicting indicators</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TESTIMONIALS ============================== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge"><span class="badge__dot"></span>Real Traders</span>
+          <h2>They stopped guessing.</h2>
+          <p>Real feedback from real traders using Vardaan across stocks, forex, and crypto.</p>
+        </div>
+      </div>
+
+      <div class="t-rows reveal">
+
+        <!-- Row 1 — scrolls right → left -->
+        <div class="t-row t-row--ltr">
+          <div class="t-track">
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">NIFTY 15m</span>
+              </div>
+              <p class="t-card__quote">Switched from a 3-indicator Frankenstein (EMA + RSI + MACD) to just Vardaan on NIFTY 15m. First two weeks I hit 4 clean setups back-to-back. The color flips actually lead price — not lag it like everything else.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FF8B5A,#B366FF)">A</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Aarav S.</div>
+                  <div class="t-card__handle">@aarav.singh <span class="t-card__handle-sep">·</span> <span class="t-card__date">2w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">EUR/USD 1H</span>
+              </div>
+              <p class="t-card__quote">EUR/USD 1H and the lag is basically zero. Win rate went from ~52% to ~61% over six weeks. Not magic — I just stopped taking bad entries because I actually wait for the color confirmation now.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FF4D8D,#B366FF)">S</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Sneha R.</div>
+                  <div class="t-card__handle">@fx_sneha <span class="t-card__handle-sep">·</span> <span class="t-card__date">1mo ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:80%">★★★★★</span>
+                  <span class="t-card__rating-num">4.0</span>
+                </div>
+                <span class="t-card__tag">BTC 4H</span>
+              </div>
+              <p class="t-card__quote">Rock solid on BTC 4H, but on 1m scalps the yellow consolidation bars trigger a bit late during news spikes. That's EMA physics, not a bug. Still my daily driver — just know its limits.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#B366FF,#4ADE80)">M</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Mihir P.</div>
+                  <div class="t-card__handle">@crypto_mihir <span class="t-card__handle-sep">·</span> <span class="t-card__date">3w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">BANKNIFTY 15m</span>
+              </div>
+              <p class="t-card__quote">NIFTY + BANKNIFTY 15m. Caught last Thursday's breakout ~10 minutes earlier than my old RSI+MACD combo. Closed +2.8R on that one trade. The indicator paid for the whole year in week one.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#4ADE80,#FCD34D)">R</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Raj K.</div>
+                  <div class="t-card__handle">@nifty_raj <span class="t-card__handle-sep">·</span> <span class="t-card__date">5d ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+              </div>
+              <p class="t-card__quote">One indicator, one chart, zero noise. Stopped needing a second screen for confirmation entirely. Clarity beats complexity every time — honestly surprised this isn't on every trader's setup yet.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FF7A59,#4ADE80)">D</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Dev N.</div>
+                  <div class="t-card__handle">@scalper_dev <span class="t-card__handle-sep">·</span> <span class="t-card__date">2mo ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:80%">★★★★★</span>
+                  <span class="t-card__rating-num">4.0</span>
+                </div>
+              </div>
+              <p class="t-card__quote">Zero repainting is the real sell — what I see at close is exactly what I trade. Only gripe: would love native mobile push alerts beyond TradingView's standard ones. Otherwise fantastic.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FCD34D,#FF4D8D)">P</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Priya G.</div>
+                  <div class="t-card__handle">@btc_priya <span class="t-card__handle-sep">·</span> <span class="t-card__date">3w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">HSI / STI 4H</span>
+              </div>
+              <p class="t-card__quote">Trading HK + SG indices for 11 years. This is the cleanest trend-exhaustion tool I've paid for — and I've paid for a lot. Most retail traders don't realize how much repainting quietly corrupts their backtests.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#4A90FF,#B366FF)">L</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Lian Z.</div>
+                  <div class="t-card__handle">@lian_zhao <span class="t-card__handle-sep">·</span> <span class="t-card__date">6w ago</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Row 2 — scrolls left → right -->
+        <div class="t-row t-row--rtl">
+          <div class="t-track">
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">XAU/USD 4H</span>
+              </div>
+              <p class="t-card__quote">XAU/USD 4H. The sideways-red zone after a strong downtrend is exactly where I used to get chopped. Now I just wait for it to flip yellow or blue. Game-changer for trading gold.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#4A90FF,#4ADE80)">T</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Tom H.</div>
+                  <div class="t-card__handle">@tom.hollis <span class="t-card__handle-sep">·</span> <span class="t-card__date">1mo ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:60%">★★★★★</span>
+                  <span class="t-card__rating-num">3.0</span>
+                </div>
+              </div>
+              <p class="t-card__quote">Decent tool, not a strategy. If you're looking for a magic bullet, keep looking. As a confirmation layer alongside my Volume Profile and market-structure work, it's solid enough to stay on the chart.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FF4D5E,#FF8B5A)">H</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Hannah W.</div>
+                  <div class="t-card__handle">@hannah.w <span class="t-card__handle-sep">·</span> <span class="t-card__date">2w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">DAX / CAC 1H</span>
+              </div>
+              <p class="t-card__quote">Le meilleur indicateur cette année. DAX and CAC40 on 1H — the signals are rock solid. My account has been consistently green for three months straight now, something I genuinely couldn't say before.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#B366FF,#FF4D8D)">T</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Thierry M.</div>
+                  <div class="t-card__handle">@thierry.m <span class="t-card__handle-sep">·</span> <span class="t-card__date">1w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:80%">★★★★★</span>
+                  <span class="t-card__rating-num">4.0</span>
+                </div>
+                <span class="t-card__tag">NIFTY 5m</span>
+              </div>
+              <p class="t-card__quote">NIFTY 5m gold since v6 update. Early blue candles sometimes flip back within 1-2 bars on news spikes which is annoying, but on clean setups the win rate is excellent. 4 stars for that news sensitivity.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#4ADE80,#4A90FF)">I</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Ishaan P.</div>
+                  <div class="t-card__handle">@ishaan_p <span class="t-card__handle-sep">·</span> <span class="t-card__date">3w ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+                <span class="t-card__tag">SPX500 4H</span>
+              </div>
+              <p class="t-card__quote">SPX500 4H + Vardaan = my entire pre-market routine now. Dropped 4 other scripts last month. Saving 20 minutes every morning. Worth it just for the time back, honestly everything else is a bonus.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#FF8B5A,#FCD34D)">N</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Noah W.</div>
+                  <div class="t-card__handle">@noah.wright <span class="t-card__handle-sep">·</span> <span class="t-card__date">1mo ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:100%">★★★★★</span>
+                  <span class="t-card__rating-num">5.0</span>
+                </div>
+              </div>
+              <p class="t-card__quote">Day one I saved roughly $400 by NOT taking a setup — red was still showing consolidation even though price looked like it was breaking out. Turned out to be a pure fakeout. That moment alone sold me on it.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#B366FF,#FF4D8D)">K</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Kavya K.</div>
+                  <div class="t-card__handle">@kavya.k <span class="t-card__handle-sep">·</span> <span class="t-card__date">5d ago</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="t-card">
+              <div class="t-card__mark" aria-hidden="true">“</div>
+              <div class="t-card__head">
+                <div class="t-card__rating">
+                  <span class="t-card__stars" style="--fill:60%">★★★★★</span>
+                  <span class="t-card__rating-num">3.0</span>
+                </div>
+              </div>
+              <p class="t-card__quote">Works as advertised, but the pricing is on the higher side for a single indicator. Three stars for value-for-money, five for the tool itself. I'd still buy it again honestly — just being real with the rating.</p>
+              <div class="t-card__foot">
+                <div class="t-card__avatar" style="background:linear-gradient(135deg,#4A90FF,#4ADE80)">A</div>
+                <div class="t-card__meta">
+                  <div class="t-card__name">Arvind K.</div>
+                  <div class="t-card__handle">@arvind.k <span class="t-card__handle-sep">·</span> <span class="t-card__date">2mo ago</span></div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================== FAQ PREVIEW ============================== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge"><span class="badge__dot"></span>Common Questions</span>
+          <h2>Answers, before you ask.</h2>
+          <p>The short version — full details live on the FAQs page.</p>
+        </div>
+
+        <div class="faq-preview faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>Does it repaint?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">No. All signals are based on confirmed closed candles. What you see is what you get.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>What markets does it work on?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">Any market available on TradingView — stocks, crypto, forex, commodities, indices.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>Do I need to configure anything?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">No. It works out of the box with sensible defaults. Advanced users can adjust EMA lengths and toggle signal visibility.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false">
+              <span>Is there a free trial?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">We don't offer a free trial currently, but we do offer a 7-day refund policy if the indicator doesn't suit your trading style.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="text-align:center; margin-top: 32px">
+          <a href="faqs.html" class="btn btn-ghost">
+            See all FAQs
+            <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CTA ============================== -->
+    <section class="section section-cta">
+      <div class="container">
+        <div class="reveal">
+          <h2>Your edge is one indicator away.</h2>
+          <p>Join traders who stopped guessing and started trading with structure.</p>
+          <div class="section-cta__ctas">
+            <a href="pricing.html" class="btn btn-primary btn-lg">
+              Get access now
+              <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a data-link="discord" href="#" class="btn btn-ghost btn-lg">Join Discord</a>
+          </div>
+          <p class="section-cta__note">7-day refund policy. No questions asked.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col-brand">
+          <a href="index.html" class="footer__brand">
+            <span class="nav__brand-mark" aria-hidden="true"></span>
+            Vardaan
+          </a>
+          <p class="footer__tagline">
+            A smart trend indicator for TradingView. Built for traders who want clarity,
+            not clutter.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Product</div>
+          <div class="footer__col-list">
+            <a href="index.html#features">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="index.html#features">Changelog</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Community</div>
+          <div class="footer__col-list">
+            <a data-link="discord" href="#">Discord</a>
+            <a data-link="discord" href="#">Setups channel</a>
+            <a data-link="discord" href="#">Results</a>
+            <a data-link="discord" href="#">Announcements</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Support</div>
+          <div class="footer__col-list">
+            <a data-mail href="#">Contact</a>
+            <a href="faqs.html">Help center</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <div>© <span data-text="year">2025</span> Vardaan. Built for traders, by traders.</div>
+        <div class="footer__bottom-social">
+          <a data-link="discord" href="#" class="footer__icon" aria-label="Discord">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          </a>
+          <a data-mail href="#" class="footer__icon" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a data-link="twitter" href="#" class="footer__icon" aria-label="Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H.8l8-9.2L0 2h7l4.8 6.3L18 2zM16.8 20h1.7L7.3 3.9H5.5L16.8 20z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

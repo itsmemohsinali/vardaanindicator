@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQs — Vardaan</title>
+  <meta name="description" content="Frequently asked questions about the Vardaan TradingView indicator — repainting, markets, timeframes, refunds and more." />
+  <meta name="theme-color" content="#060607" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================== PROMO BAR ============================== -->
+  <div class="promo-bar" id="promo-bar" role="region" aria-label="Promotional offer">
+    <div class="promo-bar__inner">
+      <span class="promo-bar__tag">
+        <svg class="promo-bar__tag-icon" width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true">
+          <path d="M6.8 0.6 3 6.2h2.3l-1 5.2L8.9 5.6H6.5l1.2-5z"/>
+        </svg>
+        <span data-text="promo.offerName">Launch Sale</span>
+      </span>
+      <span class="promo-bar__text">
+        Save <em class="promo-bar__pct" data-text="promo.percent">20%</em> on your first year<span class="promo-bar__text-extra"> · ends in <strong data-text="promo.deadline">48h</strong></span>
+      </span>
+      <span class="promo-bar__divider" aria-hidden="true"></span>
+      <button class="promo-bar__code" type="button" data-promo-code data-code="VARDAAN20" aria-label="Copy code VARDAAN20">
+        <span class="promo-bar__code-value" data-text="promo.code">VARDAAN20</span>
+        <span class="promo-bar__copy-btn" aria-hidden="true">
+          <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
+            <rect x="5" y="5" width="9" height="9" rx="1.6" stroke="currentColor" stroke-width="1.3"/>
+            <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-7A1.5 1.5 0 0 0 1 3.5v7A1.5 1.5 0 0 0 2.5 12H4" stroke="currentColor" stroke-width="1.3"/>
+          </svg>
+        </span>
+      </button>
+      <a href="pricing.html" class="promo-bar__cta">
+        Claim offer
+        <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button class="promo-bar__close" type="button" aria-label="Dismiss offer">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2.5 2.5l7 7m0-7l-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">
+        <span class="nav__brand-mark" aria-hidden="true"></span>
+        Vardaan
+      </a>
+      <ul class="nav__links">
+        <li><a class="nav__link" href="index.html">Home</a></li>
+        <li><a class="nav__link" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link nav__link--active" href="faqs.html">FAQs</a></li>
+        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li class="nav__sep" aria-hidden="true"></li>
+        <li><a class="nav__link nav__link--social nav__link--discord" data-link="discord" href="#">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          Discord
+        </a></li>
+        <li><a class="nav__link nav__link--social nav__link--telegram" data-link="telegram" href="#">
+          <svg width="14" height="14" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+          Telegram
+        </a></li>
+      </ul>
+      <div class="nav__cta-group">
+        <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+      </div>
+      <button class="nav__burger" aria-label="Open menu" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <a class="mobile-menu__link" href="index.html">Home</a>
+    <a class="mobile-menu__link" href="pricing.html">Pricing</a>
+    <a class="mobile-menu__link" href="faqs.html">FAQs</a>
+    <a class="mobile-menu__link" href="contact.html">Contact</a>
+    <div class="mobile-menu__sep" aria-hidden="true"></div>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--discord" data-link="discord" href="#">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+      Discord
+    </a>
+    <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--telegram" data-link="telegram" href="#">
+      <svg width="22" height="22" viewBox="0 0 240 240" fill="currentColor" aria-hidden="true"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg>
+      Telegram
+    </a>
+    <div class="mobile-menu__actions">
+      <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================== HEADER ============================== -->
+    <section class="page-header">
+      <div class="container">
+        <span class="badge reveal"><span class="badge__dot"></span>Help Center</span>
+        <h1 class="reveal" data-delay="80">Frequently asked <span class="gradient-text">questions</span></h1>
+        <p class="reveal" data-delay="160">Everything you need to know before getting started.</p>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ LIST ============================== -->
+    <section class="section faq-page-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="faq-page__toolbar reveal" data-delay="40">
+          <div class="faq-search">
+            <svg class="faq-search__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M20 20l-4.3-4.3"/>
+            </svg>
+            <input
+              type="search"
+              id="faq-search"
+              class="faq-search__input"
+              placeholder="Search questions…"
+              autocomplete="off"
+              enterkeyhint="search"
+              aria-label="Search frequently asked questions"
+            />
+          </div>
+          <p id="faq-search-live" class="faq-search__live" aria-live="polite"></p>
+        </div>
+
+        <div class="faq-shell reveal" data-delay="100">
+          <div class="faq-list" id="faq-accordion">
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>What is Vardaan?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Vardaan is a TradingView Pine Script indicator that combines trend detection,
+                candlestick pattern recognition, and entry/exit signals into one clean overlay.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Which platforms does Vardaan support?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Vardaan is built for TradingView — desktop web and the TradingView mobile app.
+                It is not available as a MetaTrader, cTrader, or other broker-platform plugin.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Do I need a paid TradingView plan?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                No. A free TradingView account is enough to add private indicators like Vardaan
+                to your charts. Your purchase is for Vardaan — not an extra TradingView subscription tier.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Does it repaint?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                No. All signals are based on confirmed closed candles. What you see is what
+                you get.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>What markets does it work on?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Any market available on TradingView — stocks, crypto, forex, commodities,
+                indices.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>What timeframes work best?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                It works on all timeframes. Most users prefer 15m–4H for swing trading and
+                1m–5m for intraday.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Can I use Vardaan on my phone or tablet?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Yes. Install TradingView on iOS or Android, open your chart, and Vardaan appears
+                with your other saved indicators. Layouts sync across devices when you are signed in.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Is Vardaan suitable for beginners?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Yes. It is designed for quick context — trend versus chop, and cleaner setups —
+                without a long settings checklist. You still need solid risk management and a
+                trading plan; no tool replaces discipline.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>How do I get access after payment?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                You'll receive an invite link to our Discord. Share your TradingView
+                username there and access is granted within a few hours.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Can I use it on multiple devices?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Yes, TradingView syncs your indicators across all devices automatically.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Is there a free trial?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                We don't offer a free trial currently, but we do offer a 7-day refund policy
+                if the indicator doesn't suit your trading style.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>How do refunds work?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                We offer a 7-day refund if Vardaan is not the right fit. Reach out on Discord or
+                email with your order details and TradingView username, and we will take care of it
+                as quickly as we can.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>How often is Vardaan updated?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                We ship improvements, compatibility fixes, and quality-of-life updates on a rolling
+                basis. Join Discord for release notes and a heads-up when something meaningful
+                changes.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>What does the amber candle mean?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Amber means the market is in a sideways or low-conviction state. The
+                indicator is telling you to wait for a clearer setup.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>Do I need to configure anything?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                No. It works out of the box with sensible defaults. Advanced users can
+                adjust EMA lengths and toggle signal visibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-item__trigger" aria-expanded="false">
+              <span>How is this different from default TradingView indicators?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__panel">
+              <p class="faq-item__body">
+                Default indicators are separate and disconnected. Vardaan integrates trend,
+                momentum, and pattern logic into a single unified system with no clutter.
+              </p>
+            </div>
+          </div>
+
+          </div>
+
+          <div class="faq-empty" id="faq-empty" hidden>
+            <p class="faq-empty__title">No questions match that search</p>
+            <p class="faq-empty__hint">Try another keyword or clear the filter.</p>
+            <button type="button" class="btn btn-ghost btn-sm" id="faq-empty-clear">Clear search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cta">
+      <div class="container">
+        <div class="reveal">
+          <h2>Still have questions?</h2>
+          <p>We are happy to help on Discord or by email — most replies land within a few hours.</p>
+          <div class="section-cta__ctas">
+            <a href="contact.html" class="btn btn-primary btn-lg">Contact us</a>
+            <a data-link="discord" href="#" class="btn btn-ghost btn-lg">Join Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col-brand">
+          <a href="index.html" class="footer__brand">
+            <span class="nav__brand-mark" aria-hidden="true"></span>
+            Vardaan
+          </a>
+          <p class="footer__tagline">
+            A smart trend indicator for TradingView. Built for traders who want clarity,
+            not clutter.
+          </p>
+        </div>
+        <div>
+          <div class="footer__col-title">Product</div>
+          <div class="footer__col-list">
+            <a href="index.html#features">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="index.html#features">Changelog</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Community</div>
+          <div class="footer__col-list">
+            <a data-link="discord" href="#">Discord</a>
+            <a data-link="discord" href="#">Setups channel</a>
+            <a data-link="discord" href="#">Results</a>
+            <a data-link="discord" href="#">Announcements</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer__col-title">Support</div>
+          <div class="footer__col-list">
+            <a data-mail href="#">Contact</a>
+            <a href="faqs.html">Help center</a>
+            <a href="#">Refund policy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© <span data-text="year">2025</span> Vardaan. Built for traders, by traders.</div>
+        <div class="footer__bottom-social">
+          <a data-link="discord" href="#" class="footer__icon" aria-label="Discord">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
+          </a>
+          <a data-mail href="#" class="footer__icon" aria-label="Email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          </a>
+          <a data-link="twitter" href="#" class="footer__icon" aria-label="Twitter">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H.8l8-9.2L0 2h7l4.8 6.3L18 2zM16.8 20h1.7L7.3 3.9H5.5L16.8 20z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="config.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
