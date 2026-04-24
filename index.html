@@ -6,6 +6,7 @@
   <title>Vardaan — Trade with Clarity. Not Noise.</title>
   <meta name="description" content="Vardaan is a smart trend indicator for TradingView that color-codes every candle, detects candlestick patterns, and signals entries and exits." />
   <meta name="theme-color" content="#060607" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" data-site-asset="icon" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,8 +24,8 @@
         Save <em class="promo-bar__pct" data-text="promo.percent">20%</em> on your first year<span class="promo-bar__text-extra"> · ends in <strong data-text="promo.deadline">48h</strong></span>
       </span>
       <span class="promo-bar__divider" aria-hidden="true"></span>
-      <button class="promo-bar__code" type="button" data-promo-code data-code="VARDAAN20" aria-label="Copy code VARDAAN20">
-        <span class="promo-bar__code-value" data-text="promo.code">VARDAAN20</span>
+      <button class="promo-bar__code" type="button" data-promo-code>
+        <span class="promo-bar__code-value" data-text="promo.code">VARDAAN10</span>
         <span class="promo-bar__copy-btn" aria-hidden="true">
           <svg width="11" height="11" viewBox="0 0 16 16" fill="none">
             <rect x="5" y="5" width="9" height="9" rx="1.6" stroke="currentColor" stroke-width="1.3"/>
@@ -32,7 +33,7 @@
           </svg>
         </span>
       </button>
-      <a href="pricing.html" class="promo-bar__cta">
+      <a data-page="pricing" href="pricing.html" class="promo-bar__cta">
         Claim offer
         <svg width="11" height="11" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -49,15 +50,15 @@
   <!-- ============================== NAV ============================== -->
   <nav class="nav" aria-label="Primary">
     <div class="nav__inner">
-      <a href="index.html" class="nav__brand">
-        <span class="nav__brand-mark" aria-hidden="true"></span>
-        Vardaan
+      <a data-page="home" href="index.html" class="nav__brand">
+        <img class="nav__brand-mark" src="assets/logo.svg" alt="" width="22" height="20" decoding="async" data-site-asset="logo" />
+        <span data-text="brand">Vardaan</span>
       </a>
       <ul class="nav__links">
-        <li><a class="nav__link nav__link--active" href="index.html">Home</a></li>
-        <li><a class="nav__link" href="pricing.html">Pricing</a></li>
-        <li><a class="nav__link" href="faqs.html">FAQs</a></li>
-        <li><a class="nav__link" href="contact.html">Contact</a></li>
+        <li><a class="nav__link nav__link--active" data-page="home" href="index.html">Home</a></li>
+        <li><a class="nav__link" data-page="pricing" href="pricing.html">Pricing</a></li>
+        <li><a class="nav__link" data-page="faqs" href="faqs.html">FAQs</a></li>
+        <li><a class="nav__link" data-page="contact" href="contact.html">Contact</a></li>
         <li class="nav__sep" aria-hidden="true"></li>
         <li><a class="nav__link nav__link--social nav__link--discord" data-link="discord" href="#">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
@@ -69,7 +70,7 @@
         </a></li>
       </ul>
       <div class="nav__cta-group">
-        <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+        <a data-page="pricing" href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
       </div>
       <button class="nav__burger" aria-label="Open menu" aria-controls="mobile-menu">
         <span></span><span></span><span></span>
@@ -78,10 +79,10 @@
   </nav>
 
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-    <a class="mobile-menu__link" href="index.html">Home</a>
-    <a class="mobile-menu__link" href="pricing.html">Pricing</a>
-    <a class="mobile-menu__link" href="faqs.html">FAQs</a>
-    <a class="mobile-menu__link" href="contact.html">Contact</a>
+    <a class="mobile-menu__link" data-page="home" href="index.html">Home</a>
+    <a class="mobile-menu__link" data-page="pricing" href="pricing.html">Pricing</a>
+    <a class="mobile-menu__link" data-page="faqs" href="faqs.html">FAQs</a>
+    <a class="mobile-menu__link" data-page="contact" href="contact.html">Contact</a>
     <div class="mobile-menu__sep" aria-hidden="true"></div>
     <a class="mobile-menu__link mobile-menu__link--social mobile-menu__link--discord" data-link="discord" href="#">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
@@ -92,7 +93,7 @@
       Telegram
     </a>
     <div class="mobile-menu__actions">
-      <a href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
+      <a data-page="pricing" href="pricing.html" class="btn btn-primary btn-sm">Get access</a>
     </div>
   </div>
 
@@ -104,7 +105,7 @@
 
         <span class="badge hero__badge hero-anim" style="--d:0ms">
           <span class="badge__dot"></span>
-          TradingView Indicator · v6.0 released
+          <span data-text="copy.heroBadge">TradingView Indicator · v6.0 released</span>
         </span>
 
         <h1 class="hero__headline hero-anim" style="--d:80ms">
@@ -119,13 +120,13 @@
         </p>
 
         <div class="hero__ctas hero-anim" style="--d:240ms">
-          <a href="pricing.html" class="btn btn-primary btn-lg">
+          <a data-page="pricing" href="pricing.html" class="btn btn-primary btn-lg">
             Get access
             <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
-          <a href="contact.html" class="btn btn-ghost btn-ghost--bright btn-lg">
+          <a data-page="contact" href="contact.html" class="btn btn-ghost btn-ghost--bright btn-lg">
             <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <rect x="2" y="3.5" width="12" height="11" rx="1.6" stroke="currentColor" stroke-width="1.4"/>
               <path d="M2 6.6h12" stroke="currentColor" stroke-width="1.4"/>
@@ -140,7 +141,7 @@
             <span></span><span></span><span></span><span></span>
           </span>
           <span class="hero__trust-stars" aria-hidden="true">★★★★★</span>
-          Trusted by 1,200+ traders
+          <span data-text="copy.heroTrustLine">Trusted by 1,200+ traders</span>
         </div>
 
         <!-- hero chart — crisp SVG, built in main.js -->
@@ -970,7 +971,7 @@
         </div>
 
         <div class="reveal" style="text-align:center; margin-top: 32px">
-          <a href="faqs.html" class="btn btn-ghost">
+          <a data-page="faqs" href="faqs.html" class="btn btn-ghost">
             See all FAQs
             <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -987,7 +988,7 @@
           <h2>Your edge is one indicator away.</h2>
           <p>Join traders who stopped guessing and started trading with structure.</p>
           <div class="section-cta__ctas">
-            <a href="pricing.html" class="btn btn-primary btn-lg">
+            <a data-page="pricing" href="pricing.html" class="btn btn-primary btn-lg">
               Get access now
               <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1005,63 +1006,72 @@
   <!-- ============================== FOOTER ============================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__top">
-        <div class="footer__col-brand">
-          <a href="index.html" class="footer__brand">
-            <span class="nav__brand-mark" aria-hidden="true"></span>
-            Vardaan
-          </a>
-          <p class="footer__tagline">
-            A smart trend indicator for TradingView. Built for traders who want clarity,
-            not clutter.
-          </p>
-        </div>
+      <div class="footer__shell">
+      <nav class="footer__nav" aria-label="Site">
+        <div class="footer__top">
+          <div class="footer__col-brand">
+            <p class="footer__eyebrow mono" data-text="domain">vardaan.app</p>
+            <a data-page="home" href="index.html" class="footer__brand">
+              <img class="nav__brand-mark" src="assets/logo.svg" alt="" width="22" height="20" decoding="async" data-site-asset="logo" />
+              <span data-text="brand">Vardaan</span>
+            </a>
+            <p class="footer__tagline" data-text="copy.footerBlurb">
+              A smart trend indicator for TradingView. Built for traders who want clarity,
+              not clutter.
+            </p>
+          </div>
 
-        <div>
-          <div class="footer__col-title">Product</div>
-          <div class="footer__col-list">
-            <a href="index.html#features">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="faqs.html">FAQs</a>
-            <a href="index.html#features">Changelog</a>
+          <div class="footer__col">
+            <div class="footer__col-title">Product</div>
+            <ul class="footer__col-list">
+              <li><a data-page="home" data-page-hash="features" href="index.html#features">Features</a></li>
+              <li><a data-page="pricing" href="pricing.html">Pricing</a></li>
+              <li><a data-page="contact" href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <div class="footer__col-title">Support</div>
+            <ul class="footer__col-list">
+              <li><a data-page="faqs" href="faqs.html">FAQs</a></li>
+              <li><a data-page="faqs" data-page-hash="faq-refunds" href="faqs.html#faq-refunds">Refunds</a></li>
+              <li><a data-page="terms" href="terms.html">Terms &amp; conditions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col footer__col--social" aria-label="Social">
+            <div class="footer__col-title">Social</div>
+            <ul class="footer__col-list">
+              <li>
+                <a data-link="discord" href="#" class="footer__social-link">
+                  <span class="footer__social-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg></span>
+                  Discord
+                </a>
+              </li>
+              <li>
+                <a data-link="telegram" href="#" class="footer__social-link">
+                  <span class="footer__social-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 240 240" fill="currentColor"><path d="M120 0C53.73 0 0 53.73 0 120s53.73 120 120 120 120-53.73 120-120S186.27 0 120 0zm55.65 82.75L156.4 172.6c-1.45 6.48-5.29 8.09-10.7 5.04l-29.56-21.8-14.26 13.73c-1.58 1.58-2.9 2.9-5.94 2.9l2.11-30.05 54.7-49.43c2.38-2.13-.52-3.31-3.69-1.18l-67.64 42.58-29.15-9.12c-6.34-1.98-6.47-6.34 1.32-9.38l114.15-44.02c5.29-1.98 9.92 1.19 8.21 8.87z"/></svg></span>
+                  Telegram
+                </a>
+              </li>
+              <li>
+                <a data-link="instagram" href="#" class="footer__social-link">
+                  <span class="footer__social-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.7" cy="6.3" r="1.15" fill="currentColor" stroke="none"/></svg></span>
+                  Instagram
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-
-        <div>
-          <div class="footer__col-title">Community</div>
-          <div class="footer__col-list">
-            <a data-link="discord" href="#">Discord</a>
-            <a data-link="discord" href="#">Setups channel</a>
-            <a data-link="discord" href="#">Results</a>
-            <a data-link="discord" href="#">Announcements</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="footer__col-title">Support</div>
-          <div class="footer__col-list">
-            <a data-mail href="#">Contact</a>
-            <a href="faqs.html">Help center</a>
-            <a href="#">Refund policy</a>
-            <a href="#">Terms</a>
-          </div>
-        </div>
-      </div>
+      </nav>
 
       <div class="footer__bottom">
-        <div>© <span data-text="year">2025</span> Vardaan. Built for traders, by traders.</div>
-        <div class="footer__bottom-social">
-          <a data-link="discord" href="#" class="footer__icon" aria-label="Discord">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
-          </a>
-          <a data-mail href="#" class="footer__icon" aria-label="Email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-          </a>
-          <a data-link="twitter" href="#" class="footer__icon" aria-label="Twitter">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H.8l8-9.2L0 2h7l4.8 6.3L18 2zM16.8 20h1.7L7.3 3.9H5.5L16.8 20z"/></svg>
-          </a>
-        </div>
+        <p class="footer__copy">
+          <span class="footer__copy-line">© <span data-text="year">2025</span> <span class="footer__copy-brand" data-text="brand">Vardaan</span></span>
+          <span class="footer__copy-sub" data-text="tagline">Built for traders, by traders.</span>
+        </p>
       </div>
+    </div>
     </div>
   </footer>
 

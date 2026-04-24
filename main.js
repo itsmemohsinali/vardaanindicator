@@ -1,15 +1,19 @@
 /* ==========================================================================
-   Vardaan — main.js  (v5, Framer-style)
+   Vardaan — main.js
+   UI behavior: promo bar, nav, mobile menu, reveals, FAQ, pricing toggles,
+   marquee loops, and procedural SVG charts. Tuning values prefer window.SITE
+   (see config.js) when present.
    ========================================================================== */
 
 (function () {
   'use strict';
 
+  const SITE = window.SITE || {};
+
   /* ------------------------------------------------------------------
      Promo bar: dismiss (persisted) + click-to-copy code
      ------------------------------------------------------------------ */
-  const PROMO_KEY = (window.SITE && window.SITE.promo && window.SITE.promo.storageKey)
-    || 'vardaan:promo:v1:dismissed';
+  const PROMO_KEY = (SITE.promo && SITE.promo.storageKey) || 'vardaan:promo:v1:dismissed';
   try {
     if (localStorage.getItem(PROMO_KEY) === '1' && document.body) {
       document.body.classList.add('promo-hidden');
@@ -18,11 +22,28 @@
 
   const promo = document.getElementById('promo-bar');
   if (promo) {
+    function syncPromoBarHeight() {
+      if (document.body.classList.contains('promo-hidden')) {
+        document.documentElement.style.removeProperty('--promo-h');
+        return;
+      }
+      if (window.innerWidth > 960) {
+        document.documentElement.style.removeProperty('--promo-h');
+        return;
+      }
+      const h = promo.getBoundingClientRect().height;
+      document.documentElement.style.setProperty(
+        '--promo-h',
+        Math.max(40, Math.ceil(h)) + 'px'
+      );
+    }
+
     const closeBtn = promo.querySelector('.promo-bar__close');
     if (closeBtn) {
       closeBtn.addEventListener('click', () => {
         document.body.classList.add('promo-hidden');
         try { localStorage.setItem(PROMO_KEY, '1'); } catch (_) {}
+        syncPromoBarHeight();
       });
     }
 
@@ -54,6 +75,12 @@
         } catch (_) {}
       });
     }
+
+    window.addEventListener('resize', syncPromoBarHeight, { passive: true });
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(syncPromoBarHeight).observe(promo);
+    }
+    syncPromoBarHeight();
   }
 
   /* ------------------------------------------------------------------
@@ -76,9 +103,11 @@
      Sticky nav: .scrolled after 30px
      ------------------------------------------------------------------ */
   const nav = document.querySelector('.nav');
+  const navScrollThreshold =
+    SITE.ui && typeof SITE.ui.navScrollThreshold === 'number' ? SITE.ui.navScrollThreshold : 30;
   const onScroll = () => {
     if (!nav) return;
-    nav.classList.toggle('scrolled', window.scrollY > 30);
+    nav.classList.toggle('scrolled', window.scrollY > navScrollThreshold);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -93,13 +122,16 @@
     mobileMenu.classList.remove('is-open');
     document.body.classList.remove('nav-open');
     if (burger) burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
   };
   if (burger && mobileMenu) {
     burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     burger.addEventListener('click', () => {
       const isOpen = mobileMenu.classList.toggle('is-open');
       document.body.classList.toggle('nav-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
     });
     mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
@@ -253,7 +285,8 @@
   /* ------------------------------------------------------------------
      Pricing page: INR / USD (persists in localStorage)
      ------------------------------------------------------------------ */
-  const CURRENCY_KEY = 'vardaan:pricing:currency';
+  const CURRENCY_KEY =
+    (SITE.storageKeys && SITE.storageKeys.pricingCurrency) || 'vardaan:pricing:currency';
   const currencyToggle = document.querySelector('.currency-toggle');
   if (currencyToggle) {
     const currBtns = currencyToggle.querySelectorAll('.currency-toggle__btn');
@@ -286,15 +319,17 @@
   }
 
   /* ------------------------------------------------------------------
-     Marquee — duplicate items for seamless loop
+     Marquees — duplicate track children once for a seamless CSS loop
+     (logo strip + testimonial rows use different selectors).
      ------------------------------------------------------------------ */
-  document.querySelectorAll('.marquee__track').forEach((track) => {
+  function cloneMarqueeTrack(track) {
     Array.from(track.children).forEach((item) => {
       const clone = item.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       track.appendChild(clone);
     });
-  });
+  }
+  document.querySelectorAll('.marquee__track, .t-rows .t-track').forEach(cloneMarqueeTrack);
 
   /* ------------------------------------------------------------------
      Hero chart — crisp inline SVG candlestick chart
@@ -322,7 +357,12 @@
 
     const FONT = 'Inter, system-ui, sans-serif';
     const MONO = '"JetBrains Mono", ui-monospace, monospace';
-    const COLORS = { r: '#FF4D5E', y: '#E8B233', b: '#4A90FF' };
+    const PAL = SITE.chartPalette || {};
+    const COLORS = {
+      r: PAL.bearish || '#FF4D5E',
+      y: PAL.neutral || '#E8B233',
+      b: PAL.bullishBlue || '#4A90FF',
+    };
 
     // deterministic PRNG so the chart is identical every reload
     const mulberry32 = (seed) => () => {
@@ -599,7 +639,12 @@
     if (!g) return;
     const NS = 'http://www.w3.org/2000/svg';
     const W = 480, H = 140;
-    const COL = { r: '#FF4D5E', y: '#E8B233', g_: '#4ADE80' };
+    const PAL = SITE.chartPalette || {};
+    const COL = {
+      r: PAL.bearish || '#FF4D5E',
+      y: PAL.neutral || '#E8B233',
+      g_: PAL.bullishGreen || '#4ADE80',
+    };
 
     const el = (tag, attrs) => {
       const e = document.createElementNS(NS, tag);
@@ -749,15 +794,4 @@
     });
   })();
 
-  /* ------------------------------------------------------------------
-     Testimonials — two rows, opposite-direction CSS marquee.
-     Duplicate children of each track once for a seamless infinite loop.
-     ------------------------------------------------------------------ */
-  document.querySelectorAll('.t-rows .t-track').forEach((track) => {
-    Array.from(track.children).forEach((card) => {
-      const clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      track.appendChild(clone);
-    });
-  });
 })();

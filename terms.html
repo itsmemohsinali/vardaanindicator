@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact & Book a Demo — Vardaan</title>
-  <meta name="description" content="Book a free 20-minute walkthrough of Vardaan, or drop us a message. We usually reply within a few hours." />
+  <title>Terms &amp; conditions — Vardaan</title>
+  <meta name="description" content="Terms and conditions for Vardaan — the TradingView indicator, website use, and purchases." />
   <meta name="theme-color" content="#060607" />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" data-site-asset="icon" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ============================== PROMO BAR ============================== -->
   <div class="promo-bar" id="promo-bar" role="region" aria-label="Promotional offer">
     <div class="promo-bar__inner">
       <span class="promo-bar__tag">
@@ -57,7 +56,7 @@
         <li><a class="nav__link" data-page="home" href="index.html">Home</a></li>
         <li><a class="nav__link" data-page="pricing" href="pricing.html">Pricing</a></li>
         <li><a class="nav__link" data-page="faqs" href="faqs.html">FAQs</a></li>
-        <li><a class="nav__link nav__link--active" data-page="contact" href="contact.html">Contact</a></li>
+        <li><a class="nav__link" data-page="contact" href="contact.html">Contact</a></li>
         <li class="nav__sep" aria-hidden="true"></li>
         <li><a class="nav__link nav__link--social nav__link--discord" data-link="discord" href="#">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/></svg>
@@ -97,161 +96,28 @@
   </div>
 
   <main>
-
-    <!-- ============================== HEADER ============================== -->
     <section class="page-header">
       <div class="container">
-        <span class="badge reveal"><span class="badge__dot"></span>Book a free demo</span>
-        <h1 class="reveal" data-delay="80">See Vardaan on <span class="gradient-text">your chart.</span></h1>
-        <p class="reveal" data-delay="160">Book a free 20-minute walkthrough, or just drop us a message. We usually reply within a few hours.</p>
+        <span class="badge reveal"><span class="badge__dot"></span>Legal</span>
+        <h1 class="reveal">Terms &amp; conditions</h1>
+        <p class="reveal" data-delay="80">Vardaan is a third-party indicator for TradingView. By purchasing or using it, you agree to the following. Last updated <span data-text="year">2025</span>.</p>
       </div>
     </section>
 
-    <!-- ============================== CONTACT ============================== -->
     <section class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="contact-grid reveal">
-
-          <!-- Form card -->
-          <div class="contact-card">
-            <div class="contact-card__eyebrow">Send a message</div>
-            <h2 class="contact-card__title">Tell us what you trade</h2>
-            <p class="contact-card__sub">Fill this out and we'll get back with a calendar link.</p>
-
-            <form id="contact-form" class="contact-form" novalidate>
-              <div class="contact-form__row">
-                <div class="field">
-                  <label class="field__label" for="cf-name">Full name<span class="field__label-req">*</span></label>
-                  <input id="cf-name" name="name" class="field__input" type="text" placeholder="Jordan Smith" required />
-                </div>
-                <div class="field">
-                  <label class="field__label" for="cf-email">Email<span class="field__label-req">*</span></label>
-                  <input id="cf-email" name="email" class="field__input" type="email" placeholder="you@example.com" required />
-                </div>
-              </div>
-
-              <div class="contact-form__row">
-                <div class="field">
-                  <label class="field__label" for="cf-market">What you trade</label>
-                  <select id="cf-market" name="market" class="field__select">
-                    <option value="">Select market…</option>
-                    <option>Stocks / Indices</option>
-                    <option>Crypto</option>
-                    <option>Forex</option>
-                    <option>Commodities / Gold</option>
-                    <option>Multi-asset</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label class="field__label" for="cf-topic">I'm here for</label>
-                  <select id="cf-topic" name="topic" class="field__select">
-                    <option>Book a free demo</option>
-                    <option>Pre-sales question</option>
-                    <option>Technical support</option>
-                    <option>Partnership / affiliate</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="cf-msg">Message</label>
-                <textarea id="cf-msg" name="message" class="field__textarea" placeholder="Tell us about your setup, timezone, preferred demo time, or any questions…"></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-lg contact-form__submit">
-                Send message
-                <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2.5 7h9m0 0L7.5 3m4 4L7.5 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-
-              <div class="contact-form__success" role="status" aria-live="polite">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8.2 6.5 11.5 13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Thanks — we've got your message. You'll hear back within a few hours.
-              </div>
-
-              <p class="contact-form__note">By submitting, you agree to hear back from us at the email you provided.</p>
-            </form>
-          </div>
-
-          <!-- Info card -->
-          <div class="contact-card">
-            <div class="contact-info__head">Other ways to reach us</div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <rect x="3" y="5" width="18" height="14" rx="2"/>
-                  <path d="m3 7 9 6 9-6"/>
-                </svg>
-              </span>
-              <div>
-                <div class="contact-info__h">Email</div>
-                <div class="contact-info__d">
-                  <a data-mail data-text="email" href="#">support@vardaan.app</a><br>
-                  For refunds, access issues, or anything billing-related.
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.3 4.4A18 18 0 0 0 16 3l-.3.5a16 16 0 0 0-7.4 0L8 3a18 18 0 0 0-4.3 1.4A19 19 0 0 0 .5 16.1a17 17 0 0 0 5.1 2.6l1-1.5a11 11 0 0 1-1.8-.9l.4-.3a12 12 0 0 0 11.6 0l.4.3a11 11 0 0 1-1.8.9l1 1.5a17 17 0 0 0 5.1-2.6 19 19 0 0 0-3.2-11.7ZM8.5 13.5c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Zm7 0c-1 0-1.9-1-1.9-2.1 0-1.2.8-2.1 1.9-2.1 1 0 1.9 1 1.9 2.1 0 1.2-.8 2.1-1.9 2.1Z"/>
-                </svg>
-              </span>
-              <div>
-                <div class="contact-info__h">Discord</div>
-                <div class="contact-info__d">
-                  <a data-link="discord" href="#"><span data-text="copy.discordInviteCta">Join 1,200+ traders</span></a><br>
-                  Fastest path for setup help, live discussion, and sharing trades.
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="2" y="3.5" width="12" height="11" rx="1.6"/>
-                  <path d="M2 6.6h12"/>
-                  <path d="M5.2 2v3M10.8 2v3" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <div>
-                <div class="contact-info__h">Live demo</div>
-                <div class="contact-info__d">
-                  20-minute walkthrough on Zoom. We'll share our screen and answer whatever you ask.
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-info__item">
-              <span class="contact-info__icon" aria-hidden="true">
-                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="8" cy="8" r="6"/>
-                  <path d="M8 4.5V8l2.5 1.5" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <div>
-                <div class="contact-info__h">Response time</div>
-                <div class="contact-info__d">
-                  Under 4 hours on weekdays · usually same-day on weekends.
-                </div>
-              </div>
-            </div>
-
-            <span class="contact-info__meta">
-              <span class="badge__dot"></span> Currently online
-            </span>
-          </div>
-
+      <div class="container" style="max-width: 720px;">
+        <div class="reveal">
+          <h3 style="font-size: 1.1rem; margin: 0 0 12px; font-weight: 600; color: var(--text);">Use of the product</h3>
+          <p style="color: var(--text-2); line-height: 1.65; margin-bottom: 1rem;">Vardaan is software that runs in TradingView under your own account. You are responsible for how you use it, including compliance with TradingView&rsquo;s terms and with applicable law. The indicator is an analytical aid only; it is not financial advice, and it does not guarantee returns.</p>
+          <h3 style="font-size: 1.1rem; margin: 1.25rem 0 12px; font-weight: 600; color: var(--text);">License &amp; access</h3>
+          <p style="color: var(--text-2); line-height: 1.65; margin-bottom: 1rem;">Access is granted to you for personal trading use, subject to the plan you purchase. You may not resell, share, or redistribute the indicator, invite link, or documentation to people who have not been granted access. We may revoke access in case of payment fraud or clear abuse, after notice where reasonable.</p>
+          <h3 style="font-size: 1.1rem; margin: 1.25rem 0 12px; font-weight: 600; color: var(--text);">Refunds</h3>
+          <p style="color: var(--text-2); line-height: 1.65; margin-bottom: 1rem;">Our refund window and process are described in the <a data-page="faqs" data-page-hash="faq-refunds" href="faqs.html#faq-refunds" style="color: var(--text); text-decoration: underline; text-underline-offset: 3px;">FAQs (refunds section)</a>. In short, we offer a limited-time refund if the product is not a fit, subject to the conditions stated there.</p>
+          <h3 style="font-size: 1.1rem; margin: 1.25rem 0 12px; font-weight: 600; color: var(--text);">Site &amp; contact</h3>
+          <p style="color: var(--text-2); line-height: 1.65;">This site, your data when you message us, and our handling of that data are subject to the practices we describe in our help and contact flows. For questions, use <a data-page="contact" href="contact.html" style="color: var(--text); text-decoration: underline; text-underline-offset: 3px;">Contact</a> or email <a data-mail class="dim" href="#" style="text-decoration: underline; text-underline-offset: 3px;"><span data-text="email">support1@vardaan.app</span></a>. We may update this page; the &ldquo;last updated&rdquo; year above will change when we do.</p>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -275,7 +141,7 @@
             <ul class="footer__col-list">
               <li><a data-page="home" data-page-hash="features" href="index.html#features">Features</a></li>
               <li><a data-page="pricing" href="pricing.html">Pricing</a></li>
-              <li><a data-page="contact" href="contact.html" aria-current="page">Contact us</a></li>
+              <li><a data-page="contact" href="contact.html">Contact us</a></li>
             </ul>
           </div>
           <div class="footer__col">
@@ -283,7 +149,7 @@
             <ul class="footer__col-list">
               <li><a data-page="faqs" href="faqs.html">FAQs</a></li>
               <li><a data-page="faqs" data-page-hash="faq-refunds" href="faqs.html#faq-refunds">Refunds</a></li>
-              <li><a data-page="terms" href="terms.html">Terms &amp; conditions</a></li>
+              <li><a data-page="terms" href="terms.html" aria-current="page">Terms &amp; conditions</a></li>
             </ul>
           </div>
           <div class="footer__col footer__col--social" aria-label="Social">
